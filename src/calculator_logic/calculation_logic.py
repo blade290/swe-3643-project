@@ -12,7 +12,7 @@ def is_float(string):
 def calculate_mean(num_list):
     # preq-LOGIC-5
     try:
-        num_list = num_list.split('\n')
+        num_list = num_list.split('\r\n')
         for num in num_list:
             num.strip()
         while '' in num_list:
@@ -35,7 +35,7 @@ def calculate_mean(num_list):
 def calculate_sample_standard_deviation(num_list):
     #preq-LOGIC-3
     try:
-        num_list = num_list.split('\n')
+        num_list = num_list.split('\r\n')
         for num in num_list:
             num.strip()
         while '' in num_list:
@@ -60,7 +60,7 @@ def calculate_sample_standard_deviation(num_list):
 def calculate_population_standard_deviation(num_list):
     #preq-LOGIC-4
     try:
-        num_list = num_list.split('\n')
+        num_list = num_list.split('\r\n')
         for num in num_list:
             num.strip()
         while '' in num_list:
@@ -86,7 +86,7 @@ def calculate_population_standard_deviation(num_list):
 def calculate_zscore(input_list):
     #preq-LOGIC-6
     try:
-        input_list = input_list.split('\n')
+        input_list = input_list.split('\r\n')
         while '' in input_list:
             input_list.remove('')
         if len(input_list) == 0:
@@ -120,7 +120,7 @@ def calculate_zscore(input_list):
 def calculate_single_linear_regression(input_list):
     #preq-LOGIC-7
     try:
-        input_list = input_list.split('\n')
+        input_list = input_list.split('\r\n')
         while '' in input_list:
             input_list.remove('')
         if len(input_list) == 0:
@@ -154,7 +154,7 @@ def calculate_single_linear_regression(input_list):
 def calculate_y_prediction(input_list):
     #preq-LOGIC-8
     try:
-        input_list = input_list.split('\n')
+        input_list = input_list.split('\r\n')
         while '' in input_list:
             input_list.remove('')
         if len(input_list) == 0:

@@ -2,8 +2,14 @@
 <html lang="en">
 <head>
     <title>Calculator</title>
+    <link href="../static/index.css" rel="stylesheet">
 </head>
 <body>
+<script>
+    function setTextareaValue(hiddenInputId) {
+        document.getElementById(hiddenInputId).value = document.getElementById('input_box').value;
+    }
+</script>
 <div id="main_window">
     <table id="table">
         <tr style="display: table-row">
@@ -15,4 +21,65 @@
             </td>
         </tr>
     </table>
+
+    <div class="{% if error_message %}error-box{% else %}success-box{% endif %}" id="result_box">
+        {% if not error_message %}
+        <p id="operation">{{ operation }}</p>
+        <p id="calculation_result">{{ calculation_result }}</p>
+        {% else %}
+        <p>Invalid Input</p>
+        <p id="error_message">{{ error_message }}</p>
+        {% endif %}
+    </div>
+
+        <label for="input_box" style="margin-top: 2vh; margin-bottom: 2vh;">Values</label>
+        <textarea id="input_box" rows="5">{{ input_box_content }}</textarea>
+
+    <h2>Descriptive Statistics</h2>
+
+    <form action="/sample_standard_deviation" method="POST">
+        <input id="sample_standard_deviation" name="input_box_content" type="hidden">
+        <button id="button_sample_standard_deviation" onclick="setTextareaValue('sample_standard_deviation')">Compute
+            Sample Standard Deviation
+            | one value per line
+        </button>
+    </form>
+
+    <form action="/population_standard_deviation" method="POST">
+        <input id="population_standard_deviation" name="input_box_content" type="hidden">
+        <button id="button_population_standard_deviation" onclick="setTextareaValue('population_standard_deviation')">
+            Compute
+            Population Standard Deviation | one value per line
+        </button>
+    </form>
+
+    <form action="/mean" method="POST">
+        <input id="mean" name="input_box_content" type="hidden">
+        <button id="button_mean" onclick="setTextareaValue('mean')">Compute Mean | one value per line</button>
+    </form>
+
+    <form action="/z_score" method="POST">
+        <input id="z_score" name="input_box_content" type="hidden">
+        <button id="button_z_score" onclick="setTextareaValue('z_score')">Compute Z Score | value, mean, stdDev on one
+            line
+        </button>
+    </form>
+
+    <h2>Single Linear Regression</h2>
+
+    <form action="/single_linear_regression" method="POST">
+        <input id="single_linear_regression" name="input_box_content" type="hidden">
+        <button id="button_single_linear_regression" onclick="setTextareaValue('single_linear_regression')">Compute
+            Single Linear Regression Formula | one x, y pair per line
+        </button>
+    </form>
+
+    <form action="/y_prediction" method="POST">
+        <input id="y_prediction" name="input_box_content" type="hidden">
+        <button id="button_y_prediction" onclick="setTextareaValue('y_prediction')">Compute Y
+            from Linear Regression Formula | x, m, b on one line
+        </button>
+    </form>
+</div>
 </body>
+</html>

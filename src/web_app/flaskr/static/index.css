@@ -1,0 +1,50 @@
+#main_window {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin-left: 30vw;
+    margin-right: 30vw;
+}
+
+#result_box {
+    text-align: center;
+    height: fit-content;
+    width: 100%;
+}
+
+.success-box {
+    background-color: #FFECD7;
+    color: #000000
+}
+
+.error-box {
+    background-color: #B70F0A;
+    color: #FFFFFF;
+}
+
+#clear_button {
+    width: 100%;
+    height: 100%;
+}
+
+textarea {
+    resize: none
+}
+
+form {
+    width: 100%;
+    min-height: 5vh;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+button {
+    background-color: #EBEBEB;
+    color: #000000;
+    height: 5vh;
+    width: 100%;
+    border-width: 1px;
+    border-radius: 5px;
+}
