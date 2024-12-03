@@ -95,4 +95,4 @@ TBD
 
 ## Final Video Presentation
 
-TBD
+[![Final Video Presentation](documentation_assets/Final_Project_Thumbnail.png)](https://youtu.be/4R7eq8bMRXQ)
